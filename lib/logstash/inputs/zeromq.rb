@@ -88,7 +88,7 @@ class LogStash::Inputs::ZeroMQ < LogStash::Inputs::Base
   public
   def register
     require "ffi-rzmq"
-    require "logstash/plugin_mixins/zeromq"
+    require "logstash/zeromq"
     self.class.send(:include, LogStash::PluginMixins::ZeroMQ)
     @host = Socket.gethostname
     init_socket
